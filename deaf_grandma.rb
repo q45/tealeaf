@@ -1,11 +1,22 @@
-puts "Tell grandma something"
-while true
- talk = gets.chomp
+puts "Soony peaches"
+count  = 0
 
- if talk == talk.upcase
-	puts "NO, NOT SINCE #{rand(1930..1950)} "
-	break
- else
-	puts "HUH?! SPEAK UP, SONNY!"
- end
+while true
+	said = gets.chomp
+
+	if said == 'BYE'
+		count += 1
+	else
+		count = 0
+	end
+
+	break if count >=3
+
+	response = if said != said.upcase
+			   "HUH?! SPEAK UP, SONNY!"
+		  else
+			  "NO, NOT SINCE #{rand(1930..1950)}!"
+		  end
+	puts response
+
 end
